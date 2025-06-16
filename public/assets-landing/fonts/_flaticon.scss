@@ -1,0 +1,77 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 14/06/2017 16:38
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-plus-symbol:before { content: "\f100"; }
+.flaticon-add:before { content: "\f101"; }
+.flaticon-people-1:before { content: "\f102"; }
+.flaticon-worker-of-construction-working-with-a-shovel-beside-material-pile:before { content: "\f103"; }
+.flaticon-trophy:before { content: "\f104"; }
+.flaticon-black:before { content: "\f105"; }
+.flaticon-watering-can:before { content: "\f106"; }
+.flaticon-nature-4:before { content: "\f107"; }
+.flaticon-nature-3:before { content: "\f108"; }
+.flaticon-nature-2:before { content: "\f109"; }
+.flaticon-tool-1:before { content: "\f10a"; }
+.flaticon-nature-1:before { content: "\f10b"; }
+.flaticon-tool:before { content: "\f10c"; }
+.flaticon-people:before { content: "\f10d"; }
+.flaticon-nature:before { content: "\f10e"; }
+.flaticon-sprout:before { content: "\f10f"; }
+.flaticon-nature-7:before { content: "\f110"; }
+.flaticon-nature-6:before { content: "\f111"; }
+.flaticon-nature-5:before { content: "\f112"; }
+    
+    $font-Flaticon-plus-symbol: "\f100";
+    $font-Flaticon-add: "\f101";
+    $font-Flaticon-people-1: "\f102";
+    $font-Flaticon-worker-of-construction-working-with-a-shovel-beside-material-pile: "\f103";
+    $font-Flaticon-trophy: "\f104";
+    $font-Flaticon-black: "\f105";
+    $font-Flaticon-watering-can: "\f106";
+    $font-Flaticon-nature-4: "\f107";
+    $font-Flaticon-nature-3: "\f108";
+    $font-Flaticon-nature-2: "\f109";
+    $font-Flaticon-tool-1: "\f10a";
+    $font-Flaticon-nature-1: "\f10b";
+    $font-Flaticon-tool: "\f10c";
+    $font-Flaticon-people: "\f10d";
+    $font-Flaticon-nature: "\f10e";
+    $font-Flaticon-sprout: "\f10f";
+    $font-Flaticon-nature-7: "\f110";
+    $font-Flaticon-nature-6: "\f111";
+    $font-Flaticon-nature-5: "\f112";
