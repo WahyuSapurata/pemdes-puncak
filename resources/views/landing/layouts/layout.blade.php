@@ -16,6 +16,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('logo-sinjai.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('logo-sinjai.png') }}" sizes="32x32">
     <link rel="icon" type="image/png" href="{{ asset('logo-sinjai.png') }}" sizes="16x16">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 400px;
+        }
+    </style>
 </head>
 
 <body>
@@ -62,6 +69,24 @@
         <script src="{{ asset('assets-landing/js/isotope.js') }}"></script>
         <script src="{{ asset('assets-landing/js/validation.js') }}"></script>
         <script src="{{ asset('assets-landing/js/custom.js') }}"></script>
+
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        @yield('scripts')
+
+        @if (session('error'))
+            <script>
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Peringatan',
+                    text: '{{ session('error') }}',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+            </script>
+        @endif
     </div>
 
 </body>

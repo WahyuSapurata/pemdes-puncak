@@ -17,6 +17,8 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/', 'Dashboard@index')->name('home.index');
 
     Route::get('/', 'Home@index')->name('home');
+    Route::get('/profil-desa', 'ProfilDesaController@profil_desa')->name('profil-desa');
+    Route::get('/geojson', 'ProfilDesaController@geojson')->name('geojson');
 
     Route::group(['prefix' => 'login', 'middleware' => ['guest'], 'as' => 'login.'], function () {
         Route::get('/login-akun', 'Auth@show')->name('login-akun');

@@ -3,38 +3,39 @@
     <!--Main Swiper -->
     <div class="swiper mainswiper">
         <div class="swiper-wrapper">
-            <div class="swiper-slide slide" style="background-image:url({{ asset('assets-landing/images/slider/1.jpg') }});">
+            <div class="swiper-slide slide background-overlay"
+                style="background-image:url({{ asset('assets-landing/images/slider/1.jpg') }});">
                 <div class="slide-content">
-                    <h1 class="animate-text">Transform Your Space Into a Peaceful Garden Retreat</h1>
-                    <p class="animate-text delay-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-                        eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h1 class="animate-text">Selamat Datang di Website Resmi Desa Puncak</h1>
+                    <p class="animate-text delay-1">Media informasi dan pelayanan digital untuk masyarakat Desa Puncak yang
+                        lebih transparan, akuntabel, dan mudah diakses.</p>
                     <div class="slide-buttons animate-text delay-2">
-                        <a href="contact.html" class="btn contact-btn">Contact Us</a>
-                        <a href="service.html" class="btn service-btn">Our Services</a>
+                        <a href="contact.html" class="btn contact-btn">Hubungi Kami</a>
+                        <a href="service.html" class="btn service-btn">Profil Desa</a>
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide slide"
+            <div class="swiper-slide slide background-overlay"
                 style="background-image:url({{ asset('assets-landing/images/slider/2.jpg') }});">
                 <div class="slide-content">
-                    <h1 class="animate-text">Crafting Outdoor Spaces That Inspire and Breathe</h1>
-                    <p class="animate-text delay-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h1 class="animate-text">Pelayanan Publik Cepat dan Transparan</h1>
+                    <p class="animate-text delay-1">Nikmati kemudahan layanan administrasi kependudukan, pengajuan surat,
+                        dan informasi desa secara online tanpa harus datang ke kantor desa.</p>
                     <div class="slide-buttons animate-text delay-2">
-                        <a href="contact.html" class="btn contact-btn">Contact Us</a>
-                        <a href="service.html" class="btn service-btn">Our Services</a>
+                        <a href="contact.html" class="btn contact-btn">Hubungi Kami</a>
+                        <a href="service.html" class="btn service-btn">Profil Desa</a>
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide slide"
+            <div class="swiper-slide slide background-overlay"
                 style="background-image:url({{ asset('assets-landing/images/slider/3.jpg') }});">
                 <div class="slide-content">
-                    <h1 class="animate-text">We Turn Bare Spaces Into Blooming Landscapes</h1>
-                    <p class="animate-text delay-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                        do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <h1 class="animate-text">Mewujudkan Desa Mandiri dan Sejahtera</h1>
+                    <p class="animate-text delay-1">Bersama membangun Desa Puncak dengan semangat kebersamaan, gotong
+                        royong, dan inovasi menuju masa depan yang lebih baik.</p>
                     <div class="slide-buttons animate-text delay-2">
-                        <a href="contact.html" class="btn contact-btn">Contact Us</a>
-                        <a href="service.html" class="btn service-btn">Our Services</a>
+                        <a href="contact.html" class="btn contact-btn">Hubungi Kami</a>
+                        <a href="service.html" class="btn service-btn">Profil Desa</a>
                     </div>
                 </div>
             </div>
@@ -155,27 +156,40 @@
             <div class="row">
                 <div class="col-lg-6 col-md-12">
                     <div class="single-item">
-                        <h2>Create a Greener Village with <span>Tree Plantation!</span></h2>
-                        <h4>Creating beautiful, <a href="#">sustainable gardens</a> with care and creativity.
+                        <h2>Sambutan Kepala <span>Desa Puncak</span></h2>
+                        <h4>{{ optional(
+                            $struktu_desa->filter(function ($item) {
+                                    return strtolower($item->jabatan) === 'kepala desa';
+                                })->first(),
+                        )->nama }}
+                            <br>
+                            <a href="#" style="font-size: 16px">Kepala Desa</a href="#">
                         </h4>
-                        <p>Discover Our Passion for Transforming Outdoor Spaces into Lush, Vibrant Gardens that
-                            Breathe Life, Beauty, and Serenity into Every Home and Community.</p>
-                        <p class="style-2">We help turn empty yards and rooftops into peaceful, green spaces full
-                            of life.
-                            At GreenVista, we mix creativity and nature to build gardens that match your style and
-                            needs.
+                        <p>Selamat datang di website resmi Pemerintah Desa Puncak. Situs ini merupakan sarana informasi dan
+                            komunikasi yang bertujuan untuk menyampaikan berbagai kegiatan, program, serta tata kelola
+                            pemerintahan desa secara transparan kepada seluruh masyarakat.</p>
+                        <p class="style-2">Melalui media ini, kami berharap seluruh warga dapat mengakses informasi terkait
+                            layanan administrasi desa, pembangunan, kegiatan kemasyarakatan, serta berbagai potensi yang
+                            dimiliki Desa Puncak.
                         </p>
-
-                        <div class="link_btn">
-                            <a href="about.html" class="btn-style-one">read more</a>
-                        </div>
+                        <p class="style-2">Mari bersama-sama kita manfaatkan teknologi dan media sosial secara bijak
+                            sebagai alat untuk mempererat silaturahmi, meningkatkan partisipasi warga, serta mendorong
+                            kemajuan desa yang mandiri, sejahtera, dan berdaya saing.</p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12">
                     <div class="single-item">
                         <figure class="image-box wow slideInRight  animated">
-                            <img src="{{ asset('assets-landing/images/welcome/2.jpg') }}" alt="Welcome Image"
-                                class="img-fluid">
+                            <img style="width: 570px; height: 500px;" loading="lazy"
+                                src="{{ asset(
+                                    '/public/strukturdesa/' .
+                                        optional(
+                                            $struktu_desa->filter(function ($item) {
+                                                    return strtolower($item->jabatan) === 'kepala desa';
+                                                })->first(),
+                                        )->foto,
+                                ) }}"
+                                alt="Welcome Image" class="img-fluid">
                         </figure>
                     </div>
                 </div>
@@ -185,7 +199,7 @@
     <!--/End About-seciton-->
 
 
-    <!--Service Section-->
+    {{-- <!--Service Section-->
     <section class="our-service">
         <div class="container">
             <div class="sec-title">
@@ -197,7 +211,8 @@
                         <div class="swiper-slide">
                             <div class="item">
                                 <div class="img_holder">
-                                    <img src="{{ asset('assets-landing/images/service/1.jpg') }}" alt="Awesome Image" />
+                                    <img loading="lazy" src="{{ asset('assets-landing/images/service/1.jpg') }}"
+                                        alt="Awesome Image" />
                                     <div class="overlay">
                                         <div class="inner">
                                             <div class="social">
@@ -220,7 +235,8 @@
                         <div class="swiper-slide">
                             <div class="item">
                                 <div class="img_holder">
-                                    <img src="{{ asset('assets-landing/images/service/2.jpg') }}" alt="Awesome Image" />
+                                    <img loading="lazy" src="{{ asset('assets-landing/images/service/2.jpg') }}"
+                                        alt="Awesome Image" />
                                     <div class="overlay">
                                         <div class="inner">
                                             <div class="social">
@@ -243,7 +259,8 @@
                         <div class="swiper-slide">
                             <div class="item">
                                 <div class="img_holder">
-                                    <img src="{{ asset('assets-landing/images/service/3.jpg') }}" alt="Awesome Image" />
+                                    <img loading="lazy" src="{{ asset('assets-landing/images/service/3.jpg') }}"
+                                        alt="Awesome Image" />
                                     <div class="overlay">
                                         <div class="inner">
                                             <div class="social">
@@ -266,7 +283,8 @@
                         <div class="swiper-slide">
                             <div class="item">
                                 <div class="img_holder">
-                                    <img src="{{ asset('assets-landing/images/service/4.jpg') }}" alt="Awesome Image" />
+                                    <img loading="lazy" src="{{ asset('assets-landing/images/service/4.jpg') }}"
+                                        alt="Awesome Image" />
                                     <div class="overlay">
                                         <div class="inner">
                                             <div class="social">
@@ -289,7 +307,8 @@
                         <div class="swiper-slide">
                             <div class="item">
                                 <div class="img_holder">
-                                    <img src="{{ asset('assets-landing/images/service/5.jpg') }}" alt="Awesome Image" />
+                                    <img loading="lazy" src="{{ asset('assets-landing/images/service/5.jpg') }}"
+                                        alt="Awesome Image" />
                                     <div class="overlay">
                                         <div class="inner">
                                             <div class="social">
@@ -316,7 +335,7 @@
             </div>
         </div>
     </section>
-    <!--/end Service Section-->
+    <!--/end Service Section--> --}}
 
     <!--Paralax Style-->
     <section class="parallax-style" style="background-image:url({{ asset('assets-landing/images/background/2.jpg') }});">
@@ -330,11 +349,12 @@
                             <div class="item">
                                 <div class="inner-box">
                                     <div class="icon-box">
-                                        <i class="icon flaticon-black"></i>
+                                        <i class="icon fa fa-users"></i>
                                     </div>
                                     <div class="count-outer">
-                                        <span class="count-text" data-speed="3000" data-stop="2500">0</span>
-                                        <p>Happy Clients</p>
+                                        <span class="count-text" data-speed="3000"
+                                            data-stop="{{ $penduduk->total }}">0</span>
+                                        <p>Penduduk</p>
                                     </div>
                                 </div>
                             </div>
@@ -347,11 +367,12 @@
                             <div class="item">
                                 <div class="inner-box">
                                     <div class="icon-box">
-                                        <i class="icon flaticon-trophy"></i>
+                                        <i class="icon fa fa-user-md"></i>
                                     </div>
                                     <div class="count-outer">
-                                        <span class="count-text" data-speed="3000" data-stop="950">0</span>
-                                        <p>Awards Win</p>
+                                        <span class="count-text" data-speed="3000"
+                                            data-stop="{{ $penduduk->kepala_keluarga }}">0</span>
+                                        <p>Kepala Keluarga</p>
                                     </div>
                                 </div>
                             </div>
@@ -363,11 +384,12 @@
                             <div class="item">
                                 <div class="inner-box">
                                     <div class="icon-box">
-                                        <i class="icon flaticon-nature-5"></i>
+                                        <i class="icon fa fa-male"></i>
                                     </div>
                                     <div class="count-outer">
-                                        <span class="count-text" data-speed="3000" data-stop="1650">0</span>
-                                        <p>Projects Done</p>
+                                        <span class="count-text" data-speed="3000"
+                                            data-stop="{{ $penduduk->laki_laki }}">0</span>
+                                        <p>Laki-laki</p>
                                     </div>
                                 </div>
                             </div>
@@ -379,11 +401,12 @@
                             <div class="item">
                                 <div class="inner-box">
                                     <div class="icon-box">
-                                        <i class="icon flaticon-people-1"></i>
+                                        <i class="icon fa fa-female"></i>
                                     </div>
                                     <div class="count-outer">
-                                        <span class="count-text" data-speed="3000" data-stop="1650">0</span>
-                                        <p>Our Worker</p>
+                                        <span class="count-text" data-speed="3000"
+                                            data-stop="{{ $penduduk->perempuan }}">0</span>
+                                        <p>Perempuan</p>
                                     </div>
                                 </div>
                             </div>
@@ -395,7 +418,7 @@
     </section>
     <!--/End Paralax Style-->
 
-    <!--project Section-->
+    {{-- <!--project Section-->
     <section class="our-project text-center">
         <div class="sec-title">
             <h2>our <span>projects</span></h2>
@@ -424,7 +447,8 @@
                 <div class="col-md-4 col-sm-6 filter-item Watering">
                     <div class="project-item">
                         <div class="img-holder">
-                            <figure><img src="{{ asset('assets-landing/images/project/1.jpg') }}" alt="Awesome Image" />
+                            <figure><img loading="lazy" src="{{ asset('assets-landing/images/project/1.jpg') }}"
+                                    alt="Awesome Image" />
                             </figure>
                             <div class="overlay">
                                 <div class="inner">
@@ -439,7 +463,8 @@
                 <div class="col-md-4 col-sm-6 filter-item Gardening Lawn Cleaning">
                     <div class="project-item">
                         <div class="img-holder">
-                            <figure><img src="{{ asset('assets-landing/images/project/2.jpg') }}" alt="Awesome Image" />
+                            <figure><img loading="lazy" src="{{ asset('assets-landing/images/project/2.jpg') }}"
+                                    alt="Awesome Image" />
                             </figure>
                             <div class="overlay">
                                 <div class="inner">
@@ -453,7 +478,8 @@
                 <div class="col-md-4 col-sm-6 filter-item Gardening Lawn Cleaning">
                     <div class="project-item">
                         <div class="img-holder">
-                            <figure><img src="{{ asset('assets-landing/images/project/3.jpg') }}" alt="Awesome Image" />
+                            <figure><img loading="lazy" src="{{ asset('assets-landing/images/project/3.jpg') }}"
+                                    alt="Awesome Image" />
                             </figure>
                             <div class="overlay">
                                 <div class="inner">
@@ -467,7 +493,8 @@
                 <div class="col-md-4 col-sm-6 filter-item Cleaning Watering">
                     <div class="project-item">
                         <div class="img-holder">
-                            <figure><img src="{{ asset('assets-landing/images/project/4.jpg') }}" alt="Awesome Image" />
+                            <figure><img loading="lazy" src="{{ asset('assets-landing/images/project/4.jpg') }}"
+                                    alt="Awesome Image" />
                             </figure>
                             <div class="overlay">
                                 <div class="inner">
@@ -481,7 +508,8 @@
                 <div class="col-md-4 col-sm-6 filter-item Gardening Cleaning Lawn Watering">
                     <div class="project-item">
                         <div class="img-holder">
-                            <figure><img src="{{ asset('assets-landing/images/project/5.jpg') }}" alt="Awesome Image" />
+                            <figure><img loading="lazy" src="{{ asset('assets-landing/images/project/5.jpg') }}"
+                                    alt="Awesome Image" />
                             </figure>
                             <div class="overlay">
                                 <div class="inner">
@@ -495,7 +523,8 @@
                 <div class="col-md-4 col-sm-6 filter-item Lawn Cleaning">
                     <div class="project-item">
                         <div class="img-holder">
-                            <figure><img src="{{ asset('assets-landing/images/project/6.jpg') }}" alt="Awesome Image" />
+                            <figure><img loading="lazy" src="{{ asset('assets-landing/images/project/6.jpg') }}"
+                                    alt="Awesome Image" />
                             </figure>
                             <div class="overlay">
                                 <div class="inner">
@@ -509,7 +538,7 @@
             </div>
         </div>
     </section>
-    <!--/project Section-->
+    <!--/project Section--> --}}
 
 
 
@@ -517,109 +546,42 @@
     <section class="team-seciton">
         <div class="container">
             <div class="sec-title">
-                <h2>our <span>team</span></h2>
+                <h2>Struktur Organisasi dan Tata Kerja <span>Desa Puncak</span></h2>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6">
-                    <div class="team_member">
-                        <div class="img_holder">
-                            <img src="{{ asset('assets-landing/images/team/1.jpg') }}" alt="images">
-                            <div class="overlay">
-                                <div class="border">
-                                    <div class="icon-holder">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                    </div>
-                                    <div class="icon-holder">
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                    </div>
-                                    <div class="icon-holder">
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text">
-                            <h4>Albart Muzaddid</h4>
-                            <span>Senior Worker</span>
-                            <p>Maximizing growth with expert techniques.</p>
-                        </div>
-                    </div> <!-- /team_member -->
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team_member">
-                        <div class="img_holder">
-                            <img src="{{ asset('assets-landing/images/team/2.jpg') }}" alt="images">
-                            <div class="overlay">
-                                <div class="border">
-                                    <div class="icon-holder">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                    </div>
-                                    <div class="icon-holder">
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                    </div>
-                                    <div class="icon-holder">
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
+                @forelse ($struktu_desa->take(4) as $sd)
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team_member">
+                            <div class="img_holder">
+                                <img loading="lazy" src="{{ asset('/public/strukturdesa/' . $sd->foto) }}"
+                                    alt="images">
+                                <div class="overlay">
+                                    <div class="border">
+                                        <div class="icon-holder">
+                                            <a href="#"><i class="fa fa-facebook"></i></a>
+                                        </div>
+                                        <div class="icon-holder">
+                                            <a href="#"><i class="fa fa-twitter"></i></a>
+                                        </div>
+                                        <div class="icon-holder">
+                                            <a href="#"><i class="fa fa-google-plus"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="text">
-                            <h4>Jannati Zaman</h4>
-                            <span>Senior Worker</span>
-                            <p>Quick, skilled, and environment-loving team.</p>
-                        </div>
-                    </div> <!-- /team_member -->
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team_member">
-                        <div class="img_holder">
-                            <img src="{{ asset('assets-landing/images/team/3.jpg') }}" alt="images">
-                            <div class="overlay">
-                                <div class="border">
-                                    <div class="icon-holder">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                    </div>
-                                    <div class="icon-holder">
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                    </div>
-                                    <div class="icon-holder">
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    </div>
-                                </div>
+                            <div class="text">
+                                <h4>{{ $sd->nama }}</h4>
+                                <span>{{ $sd->jabatan }}</span>
                             </div>
+                        </div> <!-- /team_member -->
+                    </div>
+                @empty
+                    <div class="col-lg-12">
+                        <div class="alert alert-warning text-center">
+                            <strong>Perhatian!</strong> Data struktur organisasi desa belum tersedia.
                         </div>
-                        <div class="text">
-                            <h4>Robart Hafizur</h4>
-                            <span>Senior Worker</span>
-                            <p>Dedicated to eco-friendly gardening practices.</p>
-                        </div>
-                    </div> <!-- /team_member -->
-                </div>
-                <div class="col-lg-3 col-md-6">
-                    <div class="team_member">
-                        <div class="img_holder">
-                            <img src="{{ asset('assets-landing/images/team/4.jpg') }}" alt="images">
-                            <div class="overlay">
-                                <div class="border">
-                                    <div class="icon-holder">
-                                        <a href="#"><i class="fa fa-facebook"></i></a>
-                                    </div>
-                                    <div class="icon-holder">
-                                        <a href="#"><i class="fa fa-twitter"></i></a>
-                                    </div>
-                                    <div class="icon-holder">
-                                        <a href="#"><i class="fa fa-google-plus"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text">
-                            <h4>Farzana Rohman</h4>
-                            <span>Senior Worker</span>
-                            <p>Passionate about sustainable gardening solutions.</p>
-                        </div>
-                    </div> <!-- /team_member -->
-                </div>
+                    </div>
+                @endforelse
             </div>
         </div>
     </section>
@@ -629,14 +591,14 @@
     <!--subscribe-us section-->
     <section class="subscribe-us">
         <div class="container">
-            <div class="row">
+            <div class="row align-items-center">
                 <div class="col-md-9">
-                    <h3>Plant More Trees, Build a Greener Tomorrow</h3>
-                    <p>We offer comprehensive landscaping with every detail designed by our experienced
-                        professionals.</p>
+                    <h3>Bersama Membangun Desa Puncak yang Maju dan Sejahtera</h3>
+                    <p>Kami berkomitmen untuk mewujudkan pembangunan yang berkelanjutan di Desa Puncak, melalui peningkatan
+                        infrastruktur, pelayanan publik, dan pemberdayaan masyarakat secara merata dan transparan.</p>
                 </div>
                 <div class="col-md-3">
-                    <a href="contact.html" class="btn-style-two pull-right">contact us</a>
+                    <a href="contact.html" class="btn-style-two pull-right">Hubungi Kami</a>
                 </div>
             </div>
         </div>
@@ -647,84 +609,51 @@
     <section class="two-column">
         <div class="container">
             <div class="sec-title">
-                <h2>why <span>choose us</span></h2>
+                <h2>APB DESA <span>{{ now()->format('Y') }}</span></h2>
             </div>
             <div class="inner-box">
-                <div class="row">
-                    <div class="col-lg-7 col-sm-12">
+                <div class="row justify-content-between">
+                    <div class="col-lg-5 col-sm-12">
                         <div class="content-box">
-                            <p>We deliver complete landscaping services with custom designs, trusted experts, and
-                                eco-friendly methods.</p>
+                            <p>Akses cepat dan transparan terhadap APB Desa serta proyek pembangunan.</p>
                             <div class="row clearfix">
-                                <div class="col-md-6 col-sm-12">
+                                <div class="col-12">
                                     <div class="single-choose-item">
                                         <div class="choose-left-bg"></div>
                                         <div class="choose-icon">
-                                            <i class="icon flaticon-nature-5"></i>
+                                            <i class="icon fa fa-money"></i>
                                         </div>
                                         <div class="choose-text">
-                                            <h4><a href="service-single.html">Tree Plantation</a></h4>
-                                            <p>Lorem ipsum dolor sit amet con sectetur adipisicing elit</p>
+                                            <h4><a href="#">Pendapatan Desa</a></h4>
+                                            <h2 class="fw-bold">Rp
+                                                {{ number_format($apbd->total_pendapatan, 0, ',', '.') }}</h2>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-12">
+                                <div class="col-12">
                                     <div class="single-choose-item">
                                         <div class="choose-left-bg"></div>
                                         <div class="choose-icon">
-                                            <i class="icon flaticon-people-1"></i>
+                                            <i class="icon fa fa-shopping-cart"></i>
                                         </div>
                                         <div class="choose-text">
-                                            <h4><a href="service-single.html">expert worker</a></h4>
-                                            <p>Lorem ipsum dolor sit amet con sectetur adipisicing elit</p>
+                                            <h4><a href="service-single.html">Belanja Desa</a></h4>
+                                            <h2 class="fw-bold">Rp
+                                                {{ number_format($apbd->total_belanja, 0, ',', '.') }}</h2>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6 col-sm-12">
+                                <div class="col-12">
                                     <div class="single-choose-item">
                                         <div class="choose-left-bg"></div>
                                         <div class="choose-icon">
-                                            <i class="icon flaticon-nature-2"></i>
+                                            <i class="icon fa fa-line-chart"></i>
                                         </div>
                                         <div class="choose-text">
-                                            <h4><a href="service-single.html">Proper Take Care</a></h4>
-                                            <p>Lorem ipsum dolor sit amet con sectetur adipisicing elit</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="single-choose-item">
-                                        <div class="choose-left-bg"></div>
-                                        <div class="choose-icon">
-                                            <i class="icon flaticon-nature-4"></i>
-                                        </div>
-                                        <div class="choose-text">
-                                            <h4><a href="service-single.html">Landscape Design</a></h4>
-                                            <p>Lorem ipsum dolor sit amet con sectetur adipisicing elit</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="single-choose-item">
-                                        <div class="choose-left-bg"></div>
-                                        <div class="choose-icon">
-                                            <i class="icon flaticon-watering-can"></i>
-                                        </div>
-                                        <div class="choose-text">
-                                            <h4><a href="service-single.html">Watering Garden</a></h4>
-                                            <p>Lorem ipsum dolor sit amet con sectetur adipisicing elit</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <div class="single-choose-item">
-                                        <div class="choose-left-bg"></div>
-                                        <div class="choose-icon">
-                                            <i class="icon flaticon-tool-1"></i>
-                                        </div>
-                                        <div class="choose-text">
-                                            <h4><a href="service-single.html">Clean Working</a></h4>
-                                            <p>Lorem ipsum dolor sit amet con sectetur adipisicing elit</p>
+                                            <h4><a href="service-single.html">Surplus/Defisit</a></h4>
+                                            <h2 class="fw-bold">Rp
+                                                {{ number_format($apbd->total_pendapatan - $apbd->total_belanja, 0, ',', '.') }}
+                                            </h2>
                                         </div>
                                     </div>
                                 </div>
@@ -733,8 +662,8 @@
                     </div>
                     <div class="col-lg-5 col-sm-12">
                         <figure class="image-box">
-                            <img class="wow slideInRight " src="{{ asset('assets-landing/images/service/3.png') }}"
-                                alt="" />
+                            <img class="wow slideInRight " loading="lazy"
+                                src="{{ asset('assets-landing/images/icons/icon-pendapatan.png') }}" alt="" />
                         </figure>
                     </div>
                 </div>
@@ -748,95 +677,29 @@
     <section class="testimonial">
         <div class="container">
             <div class="sec-title">
-                <h2>Testimonials</h2>
+                <h2>Galeri Desa</h2>
             </div>
             <div class="swiper testimonialswiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="single-item">
-                            <div class="img-box clearfix">
-                                <img src="{{ asset('assets-landing/images/service/2.png') }}" alt="Images">
-                            </div>
-                            <div class="text clearfix">
-                                <h4>Sayeda Khanom</h4>
-                                <div class="icon">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
+                    @forelse ($galeri as $g)
+                        <div class="swiper-slide">
+                            <div class="single-item">
+                                <div class="img-box clearfix">
+                                    <img loading="lazy" src="{{ asset('/public/galeri/' . $g->gambar) }}"
+                                        alt="Images">
                                 </div>
-                                <h3>Highly recommended service.</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.</p>
-                                <img src="{{ asset('assets-landing/images/resources/tes.png') }}" alt="Images">
+                                <div class="text clearfix">
+                                    <h4>{{ $g->judul }}</h4>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="single-item">
-                            <div class="img-box clearfix">
-                                <img src="{{ asset('assets-landing/images/service/6.png') }}" alt="Images">
-                            </div>
-                            <div class="text clearfix">
-                                <h4>Albart Muzaddid</h4>
-                                <div class="icon">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                                <h3>Excellent gardening help.</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.</p>
-                                <img src="{{ asset('assets-landing/images/resources/tes2.png') }}" alt="Images">
+                    @empty
+                        <div class="col-lg-12">
+                            <div class="alert alert-warning text-center">
+                                <strong>Perhatian!</strong> Data galeri desa belum tersedia.
                             </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="single-item">
-                            <div class="img-box clearfix">
-                                <img src="{{ asset('assets-landing/images/service/7.png') }}" alt="Images">
-                            </div>
-                            <div class="text clearfix">
-                                <h4>Firoz Mustahid</h4>
-                                <div class="icon">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                                <h3>Great garden support!</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.</p>
-                                <img src="{{ asset('assets-landing/images/resources/tes3.png') }}" alt="Images">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="single-item">
-                            <div class="img-box clearfix">
-                                <img src="{{ asset('assets-landing/images/service/8.png') }}" alt="Images">
-                            </div>
-                            <div class="text clearfix">
-                                <h4>Will Hafiz</h4>
-                                <div class="icon">
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                    <i class="fa fa-star" aria-hidden="true"></i>
-                                </div>
-                                <h3>Truly impressive work.</h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.</p>
-                                <img src="{{ asset('assets-landing/images/resources/tes3.png') }}" alt="Images">
-                            </div>
-                        </div>
-                    </div>
-
+                    @endforelse
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -849,60 +712,39 @@
     <section class="latest-news">
         <div class="container">
             <div class="sec-title">
-                <h2>latest <span>news</span></h2>
+                <h2>Berita desa<span>terbaru</span></h2>
             </div>
             <div class="item-list">
                 <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="item">
-                            <figure class="image-box">
-                                <img src="{{ asset('assets-landing/images/blog/1.jpg') }}">
-                            </figure>
-                            <div class="content-box">
-                                <ul class="comments">
-                                    <li><i class="fa fa-clock-o" aria-hidden="true"></i>03 May 25</li>
-                                    <li><i class="fa fa-comments" aria-hidden="true"></i>4 Comments</li>
-                                </ul>
-                                <h4><a href="blog-details.html">Garden Maintenance Checklist for Every Season</a>
-                                </h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.</p>
+                    @forelse ($berita as $bt)
+                        <div class="col-lg-4 col-md-6">
+                            <div class="item">
+                                <figure class="image-box">
+                                    <img loading="lazy" src="{{ asset('/public/berita/' . $bt->gambar) }}">
+                                </figure>
+                                <div class="content-box">
+                                    <ul class="comments">
+                                        <li><i class="fa fa-clock-o"
+                                                aria-hidden="true"></i>{{ $bt->created_at->timezone('Asia/Makassar')->format('d M Y') }}
+                                        </li>
+                                        <li><i class="fa fa-user" aria-hidden="true"></i> {{ $bt->oleh }}
+                                        </li>
+                                    </ul>
+                                    <h4><a href="blog-details.html">{{ $bt->judul }}</a>
+                                    </h4>
+                                    <p>
+                                        {!! \Illuminate\Support\Str::words(strip_tags($bt->isi), 20, '...') !!}
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="item">
-                            <figure class="image-box">
-                                <img src="{{ asset('assets-landing/images/blog/2.jpg') }}">
-                            </figure>
-                            <div class="content-box">
-                                <ul class="comments">
-                                    <li><i class="fa fa-clock-o" aria-hidden="true"></i>03 May 25</li>
-                                    <li><i class="fa fa-comments" aria-hidden="true"></i>4 Comments</li>
-                                </ul>
-                                <h4><a href="blog-details.html">Common Gardening Mistakes and How to Avoid</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.</p>
+                    @empty
+                        <div class="col-lg-12">
+                            <div class="alert alert-warning text-center">
+                                <strong>Perhatian!</strong> Data berita desa belum tersedia.
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="item">
-                            <figure class="image-box">
-                                <img src="{{ asset('assets-landing/images/blog/3.jpg') }}">
-                            </figure>
-                            <div class="content-box">
-                                <ul class="comments">
-                                    <li><i class="fa fa-clock-o" aria-hidden="true"></i>03 May 25</li>
-                                    <li><i class="fa fa-comments" aria-hidden="true"></i>4 Comments</li>
-                                </ul>
-                                <h4><a href="blog-details.html">Best Watering Practices for Healthy Plant
-                                        Growth</a></h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                    incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforelse
                 </div>
             </div>
         </div>

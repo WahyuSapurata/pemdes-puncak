@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreProfilDesaRequest;
 use App\Http\Requests\UpdateProfilDesaRequest;
 use App\Models\ProfilDesa;
+use App\Models\StrukturPemerintahan;
 use Illuminate\Support\Facades\File;
 
 class ProfilDesaController extends BaseController
@@ -104,5 +105,47 @@ class ProfilDesaController extends BaseController
             return $this->sendError($e->getMessage(), $e->getMessage(), 400);
         }
         return $this->sendResponse($data, 'Delete Profil Desa success');
+    }
+
+    // User Public
+    public function profil_desa()
+    {
+        $module = 'Profil Desa';
+        $data = ProfilDesa::first();
+        if (!$data) {
+            return redirect()->route('home')->with('error', 'Profil Desa tidak ditemukan');
+        }
+        $peta = [
+            'nama' => 'Desa Puncak',
+            'latitude' => -5.26369,
+            'longitude' => 120.12606
+        ];
+        $struktur_desa = StrukturPemerintahan::all();
+        return view('landing.profildesa', compact('module', 'data', 'peta', 'struktur_desa'));
+    }
+
+    public function geojson()
+    {
+        $geojson = [
+            "type" => "FeatureCollection",
+            "features" => [
+                [
+                    "type" => "Feature",
+                    "properties" => ["name" => "Desa Puncak"],
+                    "geometry" => [
+                        "type" => "Polygon",
+                        "coordinates" => [[
+                            [120.209266, -5.212003],
+                            [120.212266, -5.212003],
+                            [120.212266, -5.209003],
+                            [120.209266, -5.209003],
+                            [120.209266, -5.212003]
+                        ]]
+                    ]
+                ]
+            ]
+        ];
+
+        return response()->json($geojson);
     }
 }

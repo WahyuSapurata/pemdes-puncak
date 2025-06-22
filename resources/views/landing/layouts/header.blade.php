@@ -1,18 +1,34 @@
 <!-- Header Top start -->
 <div class="header-top">
-    <div class="container clearfix">
-        <!--Top Left-->
-        <div class="top-left pull-left">
-            <p>Welcome to our <span>Green Village!</span></p>
-        </div>
-        <!--Top Right-->
-        <div class="top-right pull-right">
-            <ul class="list">
-                <li><a href="#"><i class="fa fa-clock-o" aria-hidden="true"></i>
-                        10am - 04pm (Mon- Thu)</a></li>
-                <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>yourmail@gmail.com</a>
-                </li>
-            </ul>
+    <div class="container">
+        <div class="row">
+            <!--Top Left-->
+            <div class="col-lg-3 col-md-12 top-left d-flex align-items-center">
+                <p>
+                    Pengumuman <span>Desa Puncak!</span>
+                </p>
+            </div>
+            <!--Top Right-->
+            <div class="col-lg-9 col-md-12 d-flex align-items-center">
+                <marquee class="fw-bold" behavior="scroll" direction="left">
+                    @php
+                        $pengumuman = \App\Models\Pengumuman::where('status', 'aktif')
+                            ->orderBy('created_at', 'desc')
+                            ->get();
+                    @endphp
+                    @forelse ($pengumuman as $pengumumanItem)
+                        <span class="text-info">{{ $pengumumanItem->judul }}</span>
+                        <span class="text-white">{{ strip_tags($pengumumanItem->isi) }}</span>
+                        <span
+                            class="text-white">({{ $pengumumanItem->tanggal_mulai . ' - ' . $pengumumanItem->tanggal_selesai }})</span>
+                        @if (!$loop->last)
+                            <span class="text-white"> | </span>
+                        @endif
+                    @empty
+                        <span class="text-warning">Tidak ada pengumuman saat ini.</span>
+                    @endforelse
+                </marquee>
+            </div>
         </div>
     </div>
 </div><!-- Header Top End -->
@@ -49,8 +65,10 @@
 
                     <div class="navbar-collapse navbar-collapse-one collapse clearfix">
                         <ul class="navigation clearfix">
-                            <li class="current"><a href="index.html">Home</a></li>
-                            <li><a href="about.html">About</a></li>
+                            <li class="{{ request()->routeIs('home') ? 'current' : '' }}"><a
+                                    href="{{ route('home') }}">Home</a></li>
+                            <li class="{{ request()->routeIs('profil-desa') ? 'current' : '' }}"><a
+                                    href="{{ route('profil-desa') }}">Profil Desa</a></li>
 
                             <li class="dropdown"><a href="#">Services</a>
                                 <ul>
@@ -86,7 +104,7 @@
                 <!-- Main Menu End-->
                 <!-- Menu buttons-->
                 <div class="menu-button">
-                    <a href="contact.html" class="btn-style-one">GET A Quote?</a>
+                    <a href="contact.html" class="btn-style-one">Hubungi Kami?</a>
                 </div>
             </div>
         </div>

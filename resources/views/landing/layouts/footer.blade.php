@@ -7,18 +7,22 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="item">
                             <div class="footer-logo">
-                                <figure class="image-box">
-                                    <img src="{{ asset('assets-landing/images/logo/logo2.png') }}">
-                                </figure>
+                                <div class="logo"><a class="d-flex align-items-center" href="index.html">
+                                        <img style="height: 55px; width: 60px" src="{{ asset('logo-sinjai.png') }}"
+                                            alt="" title="">
+                                        <div
+                                            style="color: #ffff; font-size: 25px; line-height: 25px; font-weight: bold; font-style: italic;">
+                                            Pemdes <br> Puncak</div>
+                                    </a></div>
                             </div>
                             <ul class="working-hour">
-                                <li><i class="fa fa-clock-o" aria-hidden="true"></i>Mon- Thu <span>: 10am -
-                                        04pm</span></li>
-                                <li>Sat <span>: 9am - 3pm</span></li>
+                                <li><i class="fa fa-clock-o" aria-hidden="true"></i>Senin - Sabtu <span>: 08am -
+                                        05pm</span></li>
+                                <li>Jumat <span>: 08am - 11am</span></li>
                             </ul>
                             <ul class="location">
                                 <li><i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    Address: <span> 395 Sonadanga R/A Khulna, Bangladesh</span>
+                                    Alamat: <span> Kantor Desa Puncak Sinjai Selatan Kab. Sinjai</span>
                                 </li>
                             </ul>
                         </div>
@@ -27,37 +31,22 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="item">
                             <div class="recent-news">
-                                <h3>Recent News</h3>
-                                <div class="single-news">
-                                    <figure class="image-holder">
-                                        <a href="#"><img
-                                                src="{{ asset('assets-landing/images/resources/footer-rp1.jpg') }}"
-                                                alt="Images"></a>
-                                    </figure>
+                                <h3>Hubungi Kami</h3>
+                                <div class="contact-info" style="font-family: Arial, sans-serif;">
+                                    <div class="single-news"
+                                        style="margin-bottom: 10px; display: flex; align-items: center;">
+                                        <i class="fa fa-phone" aria-hidden="true"
+                                            style="margin-right: 10px; color: #2E86C1;"></i>
+                                        <span style="font-size: 16px; font-weight: 500;">085xxxxxxxx</span>
+                                    </div>
 
-                                    <div class="text">
-                                        <h4><a href="blog-details.html">Beginner’s Guide to Seasonal
-                                                Gardening</a>
-                                        </h4>
-                                        <p><i class="fa fa-clock-o" aria-hidden="true"></i> May 03, 2025</p>
+                                    <div class="single-news"
+                                        style="margin-bottom: 10px; display: flex; align-items: center;">
+                                        <i class="fa fa-envelope" aria-hidden="true"
+                                            style="margin-right: 10px; color: #28B463;"></i>
+                                        <span style="font-size: 16px; font-weight: 500;">pemdespuncak2@gmail.com</span>
                                     </div>
                                 </div>
-
-                                <div class="single-news">
-                                    <figure class="image-holder">
-                                        <a href="#"><img
-                                                src="{{ asset('assets-landing/images/resources/footer-rp2.jpg') }}"
-                                                alt="Images"></a>
-                                    </figure>
-
-                                    <div class="text">
-                                        <h4><a href="blog-details.html">Easy Seasonal Planting for New
-                                                Gardeners</a>
-                                        </h4>
-                                        <p><i class="fa fa-clock-o" aria-hidden="true"></i>May 03, 2025</p>
-                                    </div>
-                                </div>
-
                             </div>
                         </div>
                     </div>
@@ -65,21 +54,18 @@
                     <div class="col-md-6 col-lg-3">
                         <div class="item">
                             <div class="services">
-                                <h3>Services</h3>
+                                <h3>Jelajahi</h3>
 
                                 <ul class="service-list">
-                                    <li><a href="service-single.html"><i class="fa fa-angle-double-right"
-                                                aria-hidden="true"></i>Tree and Shrub Planting</a></li>
-                                    <li><a href="service-single.html"><i class="fa fa-angle-double-right"
-                                                aria-hidden="true"></i>Seasonal Planting Services</a></li>
-                                    <li><a href="service-single.html"><i class="fa fa-angle-double-right"
-                                                aria-hidden="true"></i>Pruning and Trimming</a></li>
-                                    <li><a href="service-single.html"><i class="fa fa-angle-double-right"
-                                                aria-hidden="true"></i>Irrigation System Installation</a></li>
-                                    <li><a href="service-single.html"><i class="fa fa-angle-double-right"
-                                                aria-hidden="true"></i>Mulching and Composting</a></li>
-                                    <li><a href="service-single.html"><i class="fa fa-angle-double-right"
-                                                aria-hidden="true"></i>Pest Control and Management</a></li>
+                                    <li><a target="_blank" href="https://kemendesa.go.id/"><i
+                                                class="fa fa-angle-double-right" aria-hidden="true"></i>Website
+                                            Kemendesa</a></li>
+                                    <li><a target="_blank" href="https://kemendagri.go.id/"><i
+                                                class="fa fa-angle-double-right" aria-hidden="true"></i>Website
+                                            Kemendagri</a></li>
+                                    <li><a target="_blank" href="https://cekdptonline.kpu.go.id/"><i
+                                                class="fa fa-angle-double-right" aria-hidden="true"></i>Cek DPT
+                                            Online</a></li>
                                 </ul>
                             </div>
 
@@ -112,7 +98,7 @@
 
     <div class="footer-bottom">
         <div class="container">
-            <p>2025 &copy; All rights reserved by <span>Webheady</span></p>
+            <p>{{ now()->format('Y') }} &copy; All rights reserved by <span>SapurataCreative</span></p>
         </div>
     </div>
 </section>
