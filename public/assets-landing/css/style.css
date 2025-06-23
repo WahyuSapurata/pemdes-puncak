@@ -594,7 +594,8 @@ textarea {
 }
 
 .features .sec-title {
-    text-align: center;
+    /* text-align: center; */
+    margin-bottom: 50px;
 }
 
 .features .sec-title p {
@@ -977,7 +978,7 @@ li {
 */
 
 .about-seciton {
-    padding: 20px 0px 80px;
+    padding: 40px 0px 80px;
 }
 
 .about-seciton.about {
@@ -1563,6 +1564,24 @@ li {
     -webkit-transition: 0.5s ease;
     transition: 0.5s ease;
 }
+
+
+#legendList li {
+    margin-bottom: 8px;
+    padding-left: 1.2rem;
+    position: relative;
+}
+
+#legendList li::before {
+    content: "●";
+    position: absolute;
+    left: 0;
+    color: #4B77BE;
+    /* atau warna sesuai chart */
+    font-size: 0.8rem;
+    top: 0;
+}
+
 
 /*
 ========================================================================

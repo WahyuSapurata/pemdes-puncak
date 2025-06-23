@@ -78,4 +78,10 @@ class APBDSController extends BaseController
         }
         return $this->sendResponse($data, 'Delete APBDS success');
     }
+
+    public function apbds()
+    {
+        $module = 'APBDS';
+        return view('landing.apbds', compact('module'));
+    }
 }

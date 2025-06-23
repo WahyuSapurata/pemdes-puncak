@@ -154,7 +154,7 @@
     </section>
     <!--/End subscribe-us section-->
 @endsection
-@section('scripts')
+@push('scripts')
     <script>
         const map = L.map('map').setView([{{ $peta['latitude'] }}, {{ $peta['longitude'] }}], 15);
 
@@ -184,4 +184,4 @@
                 map.fitBounds(geoLayer.getBounds());
             });
     </script>
-@endsection
+@endpush

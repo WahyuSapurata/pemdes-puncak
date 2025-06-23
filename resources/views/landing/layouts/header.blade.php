@@ -70,10 +70,12 @@
                             <li class="{{ request()->routeIs('profil-desa') ? 'current' : '' }}"><a
                                     href="{{ route('profil-desa') }}">Profil Desa</a></li>
 
-                            <li class="dropdown"><a href="#">Services</a>
+                            <li
+                                class="dropdown {{ request()->routeIs('penduduk') || request()->routeIs('apbds') ? 'current' : '' }}">
+                                <a href="#">Infografis</a>
                                 <ul>
-                                    <li><a href="service.html">Services</a></li>
-                                    <li><a href="service-single.html">Service Details</a></li>
+                                    <li><a href="{{ route('penduduk') }}">Penduduk</a></li>
+                                    <li><a href="{{ route('apbds') }}">APBDS</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown"><a href="#">Projects</a>

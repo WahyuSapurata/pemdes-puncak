@@ -20,6 +20,17 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/profil-desa', 'ProfilDesaController@profil_desa')->name('profil-desa');
     Route::get('/geojson', 'ProfilDesaController@geojson')->name('geojson');
 
+    Route::get('/penduduk', 'PendudukController@penduduk')->name('penduduk');
+    Route::get('/chart-umur', 'PendudukController@getChartDataUmur')->name('chart-umur');
+    Route::get('/chart-dusun', 'PendudukController@getChartDataDusun')->name('chart-dusun');
+    Route::get('/chart-pendidikan', 'PendudukController@getChartDataPendidikan')->name('chart-pendidikan');
+    Route::get('/chart-pekerjaan', 'PendudukController@getChartDataPekerjaan')->name('chart-pekerjaan');
+    Route::get('/chart-wajib-pilih', 'PendudukController@getChartDataWajibPilih')->name('chart-wajib-pilih');
+    Route::get('/chart-status-perkawinan', 'PendudukController@getChartDataPerkawinan')->name('chart-status-perkawinan');
+    Route::get('/chart-agama', 'PendudukController@getChartDataAgama')->name('chart-agama');
+
+    Route::get('/apbds', 'APBDSController@apbds')->name('apbds');
+
     Route::group(['prefix' => 'login', 'middleware' => ['guest'], 'as' => 'login.'], function () {
         Route::get('/login-akun', 'Auth@show')->name('login-akun');
         Route::post('/login-proses', 'Auth@login_proses')->name('login-proses');
