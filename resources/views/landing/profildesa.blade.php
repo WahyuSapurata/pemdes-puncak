@@ -147,7 +147,7 @@
                         infrastruktur, pelayanan publik, dan pemberdayaan masyarakat secara merata dan transparan.</p>
                 </div>
                 <div class="col-md-3">
-                    <a href="contact.html" class="btn-style-two pull-right">Hubungi Kami</a>
+                    <a href="{{ route('hubungi-kami') }}" class="btn-style-two pull-right">Hubungi Kami</a>
                 </div>
             </div>
         </div>

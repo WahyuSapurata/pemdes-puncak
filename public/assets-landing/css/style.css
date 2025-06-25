@@ -1073,6 +1073,10 @@ li {
     overflow: hidden;
 }
 
+.service-list .img_holder img {
+    height: 250px;
+}
+
 .service-list .item .img_holder .overlay {
     position: absolute;
     width: 100%;
@@ -2016,6 +2020,7 @@ testimonial Styles
     -webkit-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
     width: 100%;
+    height: 250px;
 }
 
 .latest-news .item:hover .image-box img {

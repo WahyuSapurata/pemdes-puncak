@@ -100,4 +100,11 @@ class GaleriController extends BaseController
         }
         return $this->sendResponse($data, 'Delete Galeri success');
     }
+
+    public function galeri()
+    {
+        $module = 'Galeri';
+        $galeri = Galeri::latest()->get();
+        return view('landing.galeri', compact('module', 'galeri'));
+    }
 }

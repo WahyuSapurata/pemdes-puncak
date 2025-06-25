@@ -110,4 +110,19 @@ class KegiatanController extends BaseController
         }
         return $this->sendResponse($data, 'Delete Kegiatan success');
     }
+
+    public function kegiatan()
+    {
+        $module = 'Kegiatan';
+        $kegiatan = Kegiatan::latest()->paginate(9);
+        return view('landing.kegiatan', compact('module', 'kegiatan'));
+    }
+
+    public function detail($params)
+    {
+        $data = Kegiatan::where('slug', $params)->first();
+        $module = $data->nama_kegiatan;
+        $kegiatan = Kegiatan::latest()->take(4)->get();
+        return view('landing.detail.kegiatan', compact('module', 'data', 'kegiatan'));
+    }
 }

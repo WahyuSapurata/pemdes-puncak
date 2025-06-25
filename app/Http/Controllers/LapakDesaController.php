@@ -116,4 +116,18 @@ class LapakDesaController extends BaseController
         }
         return $this->sendResponse($data, 'Delete lapak desa success');
     }
+
+    public function lapakdesa()
+    {
+        $module = 'Lapak Desa';
+        $data = LapakDesa::latest()->get();
+        return view('landing.lapakdesa', compact('module', 'data'));
+    }
+
+    public function detail($params)
+    {
+        $data = LapakDesa::where('slug', $params)->first();
+        $module = $data->nama_produk;
+        return view('landing.detail.lapakdesa', compact('module', 'data'));
+    }
 }

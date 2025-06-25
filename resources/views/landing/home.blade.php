@@ -10,8 +10,8 @@
                     <p class="animate-text delay-1">Media informasi dan pelayanan digital untuk masyarakat Desa Puncak yang
                         lebih transparan, akuntabel, dan mudah diakses.</p>
                     <div class="slide-buttons animate-text delay-2">
-                        <a href="contact.html" class="btn contact-btn">Hubungi Kami</a>
-                        <a href="service.html" class="btn service-btn">Profil Desa</a>
+                        <a href="{{ route('hubungi-kami') }}" class="btn contact-btn">Hubungi Kami</a>
+                        <a href="{{ route('profil-desa') }}" class="btn service-btn">Profil Desa</a>
                     </div>
                 </div>
             </div>
@@ -22,8 +22,8 @@
                     <p class="animate-text delay-1">Nikmati kemudahan layanan administrasi kependudukan, pengajuan surat,
                         dan informasi desa secara online tanpa harus datang ke kantor desa.</p>
                     <div class="slide-buttons animate-text delay-2">
-                        <a href="contact.html" class="btn contact-btn">Hubungi Kami</a>
-                        <a href="service.html" class="btn service-btn">Profil Desa</a>
+                        <a href="{{ route('hubungi-kami') }}" class="btn contact-btn">Hubungi Kami</a>
+                        <a href="{{ route('profil-desa') }}" class="btn service-btn">Profil Desa</a>
                     </div>
                 </div>
             </div>
@@ -34,8 +34,8 @@
                     <p class="animate-text delay-1">Bersama membangun Desa Puncak dengan semangat kebersamaan, gotong
                         royong, dan inovasi menuju masa depan yang lebih baik.</p>
                     <div class="slide-buttons animate-text delay-2">
-                        <a href="contact.html" class="btn contact-btn">Hubungi Kami</a>
-                        <a href="service.html" class="btn service-btn">Profil Desa</a>
+                        <a href="{{ route('hubungi-kami') }}" class="btn contact-btn">Hubungi Kami</a>
+                        <a href="{{ route('profil-desa') }}" class="btn service-btn">Profil Desa</a>
                     </div>
                 </div>
             </div>
@@ -493,7 +493,7 @@
                         infrastruktur, pelayanan publik, dan pemberdayaan masyarakat secara merata dan transparan.</p>
                 </div>
                 <div class="col-md-3">
-                    <a href="contact.html" class="btn-style-two pull-right">Hubungi Kami</a>
+                    <a href="{{ route('hubungi-kami') }}" class="btn-style-two pull-right">Hubungi Kami</a>
                 </div>
             </div>
         </div>
@@ -625,7 +625,8 @@
                                         <li><i class="fa fa-user" aria-hidden="true"></i> {{ $bt->oleh }}
                                         </li>
                                     </ul>
-                                    <h4><a href="blog-details.html">{{ $bt->judul }}</a>
+                                    <h4><a
+                                            href="{{ route('detail-berita', ['params' => $bt->slug]) }}">{{ $bt->judul }}</a>
                                     </h4>
                                     <p>
                                         {!! \Illuminate\Support\Str::words(strip_tags($bt->isi), 20, '...') !!}

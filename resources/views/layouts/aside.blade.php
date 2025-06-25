@@ -306,6 +306,25 @@
                     </a>
                 </div>
                 <!--end::Menu item-->
+
+                <!--begin::Menu item-->
+                <div class="menu-item">
+                    <a class="menu-link {{ isset($path[1]) && $path[1] === 'aduan' ? 'active' : '' }}"
+                        href="{{ route('admin.aduan') }}">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
+                            <span class="svg-icon svg-icon-2">
+                                {!! isset($path[1]) && $path[1] === 'aduan'
+                                    ? '<i class="fas fa-envelope" style="color: #F4BE2A; font-size: 16px"></i>'
+                                    : '<i class="fas fa-envelope" style="color: #FFFFFF; font-size: 16px"></i>' !!}
+                            </span>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <span class="menu-title"
+                            style="{{ isset($path[1]) && $path[1] === 'aduan' ? 'color: #F4BE2A' : 'color: #FFFFFF' }}">Aduan</span>
+                    </a>
+                </div>
+                <!--end::Menu item-->
             @endif
 
             {{-- <div class="menu-item">

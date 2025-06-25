@@ -71,42 +71,30 @@
                                     href="{{ route('profil-desa') }}">Profil Desa</a></li>
 
                             <li
-                                class="dropdown {{ request()->routeIs('penduduk') || request()->routeIs('apbds') ? 'current' : '' }}">
+                                class="dropdown {{ request()->routeIs('penduduk') || request()->routeIs('apbds') || request()->routeIs('bansos') || request()->routeIs('sdgs') ? 'current' : '' }}">
                                 <a href="#">Infografis</a>
                                 <ul>
                                     <li><a href="{{ route('penduduk') }}">Penduduk</a></li>
                                     <li><a href="{{ route('apbds') }}">APBDS</a></li>
+                                    <li><a href="{{ route('bansos') }}">Bansos</a></li>
+                                    <li><a href="{{ route('sdgs') }}">SDGs</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown"><a href="#">Projects</a>
-                                <ul>
-                                    <li><a href="projects.html">Projects</a></li>
-                                    <li><a href="single-project.html">Project Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#">pages</a>
-                                <ul>
-                                    <li><a href="gallery.html">Gallery Style One</a></li>
-                                    <li><a href="gallery-two.html">Gallery Style Two</a></li>
-                                    <li><a href="team.html">Team</a></li>
-                                    <li><a href="error.html">404</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown"><a href="#">blog</a>
-                                <ul>
-                                    <li><a href="blog-grid.html">Blog Grid</a></li>
-                                    <li><a href="blog-with-sidebar.html">Blog Classic</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li class="{{ request()->routeIs('berita') ? 'current' : '' }}"><a
+                                    href="{{ route('berita') }}">Berita</a></li>
+                            <li class="{{ request()->routeIs('kegiatan') ? 'current' : '' }}"><a
+                                    href="{{ route('kegiatan') }}">Kegiatan</a></li>
+                            <li class="{{ request()->routeIs('galeri') ? 'current' : '' }}"><a
+                                    href="{{ route('galeri') }}">Galeri</a></li>
+                            <li class="{{ request()->routeIs('lapakdesa') ? 'current' : '' }}"><a
+                                    href="{{ route('lapakdesa') }}">Lapak Desa</a></li>
                         </ul>
                     </div>
                 </nav>
                 <!-- Main Menu End-->
                 <!-- Menu buttons-->
                 <div class="menu-button">
-                    <a href="contact.html" class="btn-style-one">Hubungi Kami?</a>
+                    <a href="{{ route('hubungi-kami') }}" class="btn-style-one">Ajukan Permohonan</a>
                 </div>
             </div>
         </div>

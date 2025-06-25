@@ -30,6 +30,26 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/chart-agama', 'PendudukController@getChartDataAgama')->name('chart-agama');
 
     Route::get('/apbds', 'APBDSController@apbds')->name('apbds');
+    Route::get('/apbds-by-tahun/{params}', 'APBDSController@getApbdsByTahun')->name('apbds-by-tahun');
+
+    Route::get('/bansos', 'PenerimaBansosController@bansos')->name('bansos');
+    Route::get('/get-penerima-bansos/{params}', 'PenerimaBansosController@getPenerima')->name('get-penerima-bansos');
+
+    Route::get('/sdgs', 'SdgsKeluargaController@sdgs')->name('sdgs');
+
+    Route::get('/berita', 'BeritaController@berita')->name('berita');
+    Route::get('/detail-berita/{params}', 'BeritaController@detail')->name('detail-berita');
+
+    Route::get('/kegiatan', 'KegiatanController@kegiatan')->name('kegiatan');
+    Route::get('/detail-kegiatan/{params}', 'KegiatanController@detail')->name('detail-kegiatan');
+
+    Route::get('/galeri', 'GaleriController@galeri')->name('galeri');
+
+    Route::get('/lapakdesa', 'LapakDesaController@lapakdesa')->name('lapakdesa');
+    Route::get('/detail-lapakdesa/{params}', 'LapakDesaController@detail')->name('detail-lapakdesa');
+
+    Route::get('/hubungi-kami', 'KontakKamiController@kontak')->name('hubungi-kami');
+    Route::post('/add-pesan', 'KontakKamiController@add')->name('add-pesan');
 
     Route::group(['prefix' => 'login', 'middleware' => ['guest'], 'as' => 'login.'], function () {
         Route::get('/login-akun', 'Auth@show')->name('login-akun');
@@ -133,6 +153,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
         Route::get('/lapak-desa-edit/{params}', 'LapakDesaController@edit')->name('lapak-desa-edit');
         Route::post('/lapak-desa-update/{params}', 'LapakDesaController@update')->name('lapak-desa-update');
         Route::delete('/lapak-desa-delete/{params}', 'LapakDesaController@delete')->name('lapak-desa-delete');
+
+        Route::get('/aduan', 'KontakKamiController@index')->name('aduan');
+        Route::get('/aduan-get', 'KontakKamiController@get')->name('aduan-get');
     });
 
     Route::get('/logout', 'Auth@logout')->name('logout');

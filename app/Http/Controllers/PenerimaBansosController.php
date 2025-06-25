@@ -90,4 +90,39 @@ class PenerimaBansosController extends BaseController
         }
         return $this->sendResponse($data, 'Delete PenerimaBansos success');
     }
+
+    public function bansos()
+    {
+        $module = 'Bansos';
+        $bansos = PenerimaBansos::selectRaw('
+            SUM(CASE WHEN jenis_bansos = "BLT" THEN 1 ELSE 0 END) AS BLT,
+            SUM(CASE WHEN jenis_bansos = "PKH" THEN 1 ELSE 0 END) AS PKH,
+            SUM(CASE WHEN jenis_bansos = "BPNT" THEN 1 ELSE 0 END) AS BPNT
+        ')->first();
+        return view('landing.bansos', compact('module', 'bansos'));
+    }
+
+    public function getPenerima($params)
+    {
+        $penduduk = Penduduk::where('nik', $params)->first();
+
+        if (!$penduduk) {
+            return response()->json(['data' => []]);
+        }
+
+        $bansos = PenerimaBansos::where('uuid_penduduk', $penduduk->uuid)->get();
+
+        // Tambahkan data penduduk ke hasil bansos
+        $data = $bansos->map(function ($item) use ($penduduk) {
+            return [
+                'nama' => $penduduk->nama,
+                'nik' => $penduduk->nik,
+                'alamat' => $penduduk->alamat,
+                'jenis_bansos' => $item->jenis_bansos,
+                'tahun' => $item->tahun,
+            ];
+        });
+
+        return $this->sendResponse($data, 'Get data succes');
+    }
 }

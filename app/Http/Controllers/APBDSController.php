@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreAPBDSRequest;
 use App\Http\Requests\UpdateAPBDSRequest;
 use App\Models\APBDS;
+use Illuminate\Http\Request;
 
 class APBDSController extends BaseController
 {
@@ -83,5 +84,11 @@ class APBDSController extends BaseController
     {
         $module = 'APBDS';
         return view('landing.apbds', compact('module'));
+    }
+
+    public function getApbdsByTahun($params)
+    {
+        $data = APBDS::where('tahun', $params)->get();
+        return $this->sendResponse($data, 'Get APBDS by year success');
     }
 }

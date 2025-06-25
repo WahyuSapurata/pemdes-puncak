@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBeritaRequest;
 use App\Http\Requests\UpdateBeritaRequest;
 use App\Models\Berita;
+use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 
@@ -105,5 +107,43 @@ class BeritaController extends BaseController
             return $this->sendError($e->getMessage(), $e->getMessage(), 400);
         }
         return $this->sendResponse($data, 'Delete Berita success');
+    }
+
+    public function berita(Request $request)
+    {
+        $module = 'Berita';
+        $query = Berita::query();
+
+        // Jika ada pencarian keyword
+        if ($request->filled('keyword')) {
+            $keyword = $request->keyword;
+            $query->where('judul', 'like', '%' . $keyword . '%')
+                ->orWhere('isi', 'like', '%' . $keyword . '%');
+        }
+
+        $berita = $query->latest()->paginate(4);
+        $berita->appends(['keyword' => $request->keyword]); // agar query ?keyword tetap ada di pagination
+
+        // Tambahkan nama penulis (lebih efisien kalau pakai relasi eager loading)
+        foreach ($berita as $item) {
+            $item->oleh = User::where('uuid', $item->uuid_user)->first()->nama ?? '-';
+        }
+
+        // Berita terkini (tidak dipengaruhi keyword)
+        $beritaTerkini = Berita::latest()->take(2)->get();
+
+        return view('landing.berita', compact('module', 'berita', 'beritaTerkini'));
+    }
+
+    public function detail($params)
+    {
+        $data = Berita::where('slug', $params)->first();
+        $data->oleh = User::where('uuid', $data->uuid_user)->first()->nama;
+        $module = $data->judul;
+
+        $beritaTerkini = Berita::latest()
+            ->take(2)
+            ->get();
+        return view('landing.detail.berita', compact('module', 'data', 'beritaTerkini'));
     }
 }
