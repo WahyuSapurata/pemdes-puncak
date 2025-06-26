@@ -51,6 +51,9 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
     Route::get('/hubungi-kami', 'KontakKamiController@kontak')->name('hubungi-kami');
     Route::post('/add-pesan', 'KontakKamiController@add')->name('add-pesan');
 
+    Route::post('/add-pengajuan', 'SuratPengajuanController@store')->name('add-pengajuan');
+    Route::get('/get-penduduk', 'SuratPengajuanController@getDataPenduduk')->name('get-penduduk');
+
     Route::group(['prefix' => 'login', 'middleware' => ['guest'], 'as' => 'login.'], function () {
         Route::get('/login-akun', 'Auth@show')->name('login-akun');
         Route::post('/login-proses', 'Auth@login_proses')->name('login-proses');
@@ -144,6 +147,30 @@ Route::group(['namespace' => 'App\Http\Controllers'], function () {
             Route::get('/sdgs-show/{params}', 'SdgsKeluargaController@show')->name('sdgs-show');
             Route::post('/sdgs-update/{params}', 'SdgsKeluargaController@update')->name('sdgs-update');
             Route::delete('/sdgs-delete/{params}', 'SdgsKeluargaController@delete')->name('sdgs-delete');
+        });
+
+        Route::prefix('surat')->group(function () {
+            Route::get('/surat-pengajuan', 'SuratPengajuanController@index')->name('surat-pengajuan');
+            Route::get('/surat-pengajuan-get', 'SuratPengajuanController@get')->name('surat-pengajuan-get');
+            Route::get('/surat-pengajuan-show/{params}', 'SuratPengajuanController@show')->name('surat-pengajuan-show');
+            Route::post('/surat-pengajuan-update/{params}', 'SuratPengajuanController@update')->name('surat-pengajuan-update');
+            Route::delete('/surat-pengajuan-delete/{params}', 'SuratPengajuanController@delete')->name('surat-pengajuan-delete');
+
+            Route::get('/surat-masuk', 'SuratMasukController@index')->name('surat-masuk');
+            Route::get('/surat-masuk-get', 'SuratMasukController@get')->name('surat-masuk-get');
+            Route::get('/surat-masuk-tambah', 'SuratMasukController@add')->name('surat-masuk-tambah');
+            Route::post('/surat-masuk-store', 'SuratMasukController@store')->name('surat-masuk-store');
+            Route::get('/surat-masuk-edit/{params}', 'SuratMasukController@edit')->name('surat-masuk-edit');
+            Route::post('/surat-masuk-update/{params}', 'SuratMasukController@update')->name('surat-masuk-update');
+            Route::delete('/surat-masuk-delete/{params}', 'SuratMasukController@delete')->name('surat-masuk-delete');
+
+            Route::get('/surat-keluar', 'SuratKeluarController@index')->name('surat-keluar');
+            Route::get('/surat-keluar-get', 'SuratKeluarController@get')->name('surat-keluar-get');
+            Route::get('/surat-keluar-tambah', 'SuratKeluarController@add')->name('surat-keluar-tambah');
+            Route::post('/surat-keluar-store', 'SuratKeluarController@store')->name('surat-keluar-store');
+            Route::get('/surat-keluar-edit/{params}', 'SuratKeluarController@edit')->name('surat-keluar-edit');
+            Route::post('/surat-keluar-update/{params}', 'SuratKeluarController@update')->name('surat-keluar-update');
+            Route::delete('/surat-keluar-delete/{params}', 'SuratKeluarController@delete')->name('surat-keluar-delete');
         });
 
         Route::get('/lapak-desa', 'LapakDesaController@index')->name('lapak-desa');

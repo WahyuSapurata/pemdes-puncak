@@ -170,6 +170,96 @@
                     </div>
                 </div>
 
+                <div class="menu-item menu-link-indention menu-accordion {{ $path[1] == 'surat' ? 'show' : '' }}"
+                    data-kt-menu-trigger="click">
+                    <!--begin::Menu link-->
+                    <a href="#" class="menu-link py-3 {{ $path[1] == 'surat' ? 'active' : '' }}">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
+                            <span class="svg-icon svg-icon-2">
+                                {!! isset($path[1]) && $path[1] === 'surat'
+                                    ? '<i class="fas fa-mail-bulk" style="color: #F4BE2A; font-size: 16px"></i>'
+                                    : '<i class="fas fa-mail-bulk" style="color: #FFFFFF; font-size: 16px"></i>' !!}
+                            </span>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <span class="menu-title"
+                            style="{{ $path[1] == 'surat' ? 'color: #F4BE2A' : 'color: #FFFFFF' }}">Manajement
+                            Surat</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <!--end::Menu link-->
+
+                    <!--begin::Menu sub-->
+                    <div class="menu-sub gap-2 menu-sub-accordion my-2">
+                        <!--begin::Menu item-->
+                        <div class="menu-item pe-0">
+                            <a class="menu-link {{ isset($path[2]) && $path[2] === 'surat-pengajuan' ? 'active' : '' }}"
+                                href="{{ route('admin.surat-pengajuan') }}">
+                                <span class="menu-icon">
+                                    <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
+                                    <span class="svg-icon svg-icon-2">
+                                        {!! isset($path[2]) && $path[2] === 'surat-pengajuan'
+                                            ? '<i class="fas fa-envelope-open-text" style="color: #F4BE2A; font-size: 16px"></i>'
+                                            : '<i class="fas fa-envelope-open-text" style="color: #FFFFFF; font-size: 16px"></i>' !!}
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                </span>
+                                <span class="menu-title"
+                                    style="{{ isset($path[2]) && $path[2] === 'surat-pengajuan' ? 'color: #F4BE2A' : 'color: #FFFFFF' }}">Pengaduan
+                                    Surat</span>
+                            </a>
+                        </div>
+                        <!--end::Menu item-->
+                    </div>
+
+                    <!--begin::Menu sub-->
+                    <div class="menu-sub gap-2 menu-sub-accordion my-2">
+                        <!--begin::Menu item-->
+                        <div class="menu-item pe-0">
+                            <a class="menu-link {{ isset($path[2]) && $path[2] === 'surat-masuk' ? 'active' : '' }}"
+                                href="{{ route('admin.surat-masuk') }}">
+                                <span class="menu-icon">
+                                    <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
+                                    <span class="svg-icon svg-icon-2">
+                                        {!! isset($path[2]) && $path[2] === 'surat-masuk'
+                                            ? '<i class="fas fa-envelope-open" style="color: #F4BE2A; font-size: 16px"></i>'
+                                            : '<i class="fas fa-envelope-open" style="color: #FFFFFF; font-size: 16px"></i>' !!}
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                </span>
+                                <span class="menu-title"
+                                    style="{{ isset($path[2]) && $path[2] === 'surat-masuk' ? 'color: #F4BE2A' : 'color: #FFFFFF' }}">Surat
+                                    Masuk</span>
+                            </a>
+                        </div>
+                        <!--end::Menu item-->
+                    </div>
+
+                    <!--begin::Menu sub-->
+                    <div class="menu-sub gap-2 menu-sub-accordion my-2">
+                        <!--begin::Menu item-->
+                        <div class="menu-item pe-0">
+                            <a class="menu-link {{ isset($path[2]) && $path[2] === 'surat-keluar' ? 'active' : '' }}"
+                                href="{{ route('admin.surat-keluar') }}">
+                                <span class="menu-icon">
+                                    <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
+                                    <span class="svg-icon svg-icon-2">
+                                        {!! isset($path[2]) && $path[2] === 'surat-keluar'
+                                            ? '<i class="far fa-envelope-open" style="color: #F4BE2A; font-size: 16px"></i>'
+                                            : '<i class="far fa-envelope-open" style="color: #FFFFFF; font-size: 16px"></i>' !!}
+                                    </span>
+                                    <!--end::Svg Icon-->
+                                </span>
+                                <span class="menu-title"
+                                    style="{{ isset($path[2]) && $path[2] === 'surat-keluar' ? 'color: #F4BE2A' : 'color: #FFFFFF' }}">Surat
+                                    Keluar</span>
+                            </a>
+                        </div>
+                        <!--end::Menu item-->
+                    </div>
+                </div>
+
                 <!--begin::Menu item-->
                 <div class="menu-item">
                     <a class="menu-link {{ isset($path[1]) && $path[1] === 'berita' ? 'active' : '' }}"

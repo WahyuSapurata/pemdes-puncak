@@ -33,8 +33,9 @@
                                 <div class="d-flex align-items-center justify-content-between">
                                     <h2 style="font-weight: bold">Rp {{ number_format($data->harga_produk, 0, ',', '.') }}
                                     </h2>
-                                    <a href="" class="btn btn-success"><i class="fa fa-whatsapp"
-                                            aria-hidden="true"></i> Hubungi penjual</a>
+                                    <a href="https://wa.me/{{ '62' . ltrim($data->kontak_penjual, '0') }}?text=Tabe saya mau bertanya..."
+                                        class="btn btn-success"><i class="fa fa-whatsapp" aria-hidden="true"></i> Hubungi
+                                        penjual</a>
                                 </div>
                             </div>
                             <p>

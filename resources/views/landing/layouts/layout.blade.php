@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>{{ $module }} | {{ config('app.name') }}</title>
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- mobile responsive meta -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,6 +18,14 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('logo-sinjai.png') }}">
     <link rel="icon" type="image/png" href="{{ asset('logo-sinjai.png') }}" sizes="32x32">
     <link rel="icon" type="image/png" href="{{ asset('logo-sinjai.png') }}" sizes="16x16">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Select2 -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <style>
@@ -36,6 +46,10 @@
         @include('landing.layouts.footer')
         <!--/End footer-->
 
+        <div class="menu-permohonan d-lg-none d-md-flex">
+            <a href="#" class="btn-style-permohonan" data-toggle="modal" data-target="#exampleModal">Ajukan
+                Permohonan</a>
+        </div>
         <!-- Scroll Top Button -->
         <button class="scroll-top tran3s color2_bg">
             <span class="fa fa-angle-up"></span>
@@ -73,6 +87,13 @@
         <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bs-custom-file-input/dist/bs-custom-file-input.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                bsCustomFileInput.init()
+            })
+        </script>
 
         @stack('scripts')
 

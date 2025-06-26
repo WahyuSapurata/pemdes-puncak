@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <!--Top Left-->
-            <div class="col-lg-3 col-md-12 top-left d-flex align-items-center">
+            <div class="col-lg-3 col-md-12 top-left d-flex align-items-center header-text">
                 <p>
                     Pengumuman <span>Desa Puncak!</span>
                 </p>
@@ -41,7 +41,7 @@
         <div class="container clearfix">
             <div class="header-inner clearfix">
                 <div class="logo-outer">
-                    <div class="logo"><a class="d-flex align-items-center" href="index.html">
+                    <div class="logo"><a class="d-flex align-items-center" href="#">
                             <img style="height: 55px" src="{{ asset('logo-sinjai.png') }}" alt=""
                                 title="">
                             <div
@@ -52,8 +52,12 @@
                 <!-- Main Menu -->
                 <nav class="main-menu navbar-expand-lg ml-md-auto">
                     <div class="navbar-header clearfix">
-                        <div class="logo"><a href="index.html"><img src="{{ asset('logo-sinjai.png') }}"
-                                    alt="" title=""></a></div>
+                        <div class="logo"><a href="#"><img src="{{ asset('logo-sinjai.png') }}" alt=""
+                                    title="">
+                                <div
+                                    style="color: #161414; font-size: 25px; line-height: 25px; font-weight: bold; font-style: italic;">
+                                    Pemdes <br> Puncak</div>
+                            </a></div>
                         <!-- Toggle Button -->
                         <button type="button" class="navbar-toggle" data-toggle="collapse"
                             data-target=".navbar-collapse-one">
@@ -94,7 +98,8 @@
                 <!-- Main Menu End-->
                 <!-- Menu buttons-->
                 <div class="menu-button">
-                    <a href="{{ route('hubungi-kami') }}" class="btn-style-one">Ajukan Permohonan</a>
+                    <a href="#" class="btn-style-one" data-toggle="modal" data-target="#exampleModal">Ajukan
+                        Permohonan</a>
                 </div>
             </div>
         </div>
@@ -102,3 +107,124 @@
     <!--End Header Upper-->
 </header>
 <!--/End MAIN MENU -->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Buat Surat Permohonan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form class="form-data" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label">NIK</label>
+                        <input type="number" id="nik" class="form-control" name="nik">
+                        <small class="text-danger nik_error"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Nomor Telepon/WA</label>
+                        <input type="number" id="nomor" class="form-control" name="nomor">
+                        <small class="text-danger nomor_error"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Jenis Surat</label>
+                        <select name="jenis_surat" class="form-control" id="jenis_surat"
+                            data-placeholder="Silahkan pilih jenis surat">
+                            <option value="">-- Silahkan pilih jenis surat --</option>
+                            <option value="Surat Domisili">Surat Domisili</option>
+                            <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
+                            <option value="Surat Tidak Mampu">Surat Tidak Mampu</option>
+                        </select>
+                        <small class="text-danger jenis_surat_error"></small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Keterangan</label>
+                        <textarea name="keterangan" class="form-control" cols="30" rows="5"></textarea>
+                        <small class="text-danger keterangan_error"></small>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">File KTP</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroupFileAddon01"><i class="fa fa-file"
+                                        aria-hidden="true"></i></span>
+                            </div>
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" name="file_ktp"
+                                    id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                                <label class="custom-file-label" for="inputGroupFile01">Upload Gambar Ktp</label>
+                            </div>
+                        </div>
+                        <small class="text-danger file_ktp_error"></small>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-style-one bg-danger" data-dismiss="modal">Batalkan</button>
+                    <button type="submit" class="btn-style-one">Kirim</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        $(document).on('submit', ".form-data", function(e) {
+            e.preventDefault();
+
+            $.ajaxSetup({
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+            });
+
+            $.ajax({
+                type: 'POST',
+                url: '/add-pengajuan',
+                data: new FormData(this),
+                contentType: false,
+                processData: false,
+                success: function(response) {
+                    console.log(response); // Lihat outputnya di console
+
+                    $(".text-danger").html("");
+
+                    if (response.success === true) {
+                        Swal.fire({
+                            text: response.message,
+                            icon: "success",
+                            showConfirmButton: false,
+                            timer: 1500,
+                        }).then(function() {
+                            window.location.reload();
+                        });
+                    } else {
+                        Swal.fire({
+                            title: "Gagal Terkirim",
+                            text: response.message,
+                            icon: "warning",
+                            showConfirmButton: true
+                        });
+                    }
+                },
+                error: function(xhr) {
+                    $(".text-danger").html("");
+                    if (xhr.responseJSON && xhr.responseJSON.errors) {
+                        $.each(xhr.responseJSON.errors, function(key, value) {
+                            $(`.${key}_error`).html(value);
+                        });
+                    } else {
+                        Swal.fire({
+                            title: "Terjadi Kesalahan",
+                            text: xhr.responseJSON.message,
+                            icon: "error"
+                        });
+                    }
+                },
+            });
+        });
+    });
+</script>

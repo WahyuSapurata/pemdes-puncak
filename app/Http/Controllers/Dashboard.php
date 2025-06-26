@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\Penduduk;
+use App\Models\SuratPengajuan;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -19,6 +21,8 @@ class Dashboard extends BaseController
     public function dashboard_admin()
     {
         $module = 'Dashboard';
-        return view('dashboard.admin', compact('module'));
+        $pengajuan_surat = SuratPengajuan::where('status', 'proses')->count();
+        $penduduk = Penduduk::all();
+        return view('dashboard.admin', compact('module', 'pengajuan_surat', 'penduduk'));
     }
 }
