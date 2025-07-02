@@ -37,14 +37,15 @@
                                         style="margin-bottom: 10px; display: flex; align-items: center;">
                                         <i class="fa fa-phone" aria-hidden="true"
                                             style="margin-right: 10px; color: #2E86C1;"></i>
-                                        <span style="font-size: 16px; font-weight: 500;">085xxxxxxxx</span>
+                                        <span style="font-size: 16px; font-weight: 500;">082225505435</span>
                                     </div>
 
                                     <div class="single-news"
                                         style="margin-bottom: 10px; display: flex; align-items: center;">
                                         <i class="fa fa-envelope" aria-hidden="true"
                                             style="margin-right: 10px; color: #28B463;"></i>
-                                        <span style="font-size: 16px; font-weight: 500;">pemdespuncak2@gmail.com</span>
+                                        <span
+                                            style="font-size: 16px; font-weight: 500;">kantordesapuncak28@gmail.com</span>
                                     </div>
                                 </div>
                             </div>

@@ -134,9 +134,38 @@
                         <select name="jenis_surat" class="form-control" id="jenis_surat"
                             data-placeholder="Silahkan pilih jenis surat">
                             <option value="">-- Silahkan pilih jenis surat --</option>
-                            <option value="Surat Domisili">Surat Domisili</option>
-                            <option value="Surat Keterangan Usaha">Surat Keterangan Usaha</option>
-                            <option value="Surat Tidak Mampu">Surat Tidak Mampu</option>
+                            <option value="Surat Pengantar Permohonan Penerbitan Kartu Tanda Penduduk / Domisili">Surat
+                                Pengantar Permohonan Penerbitan Kartu Tanda Penduduk / Domisili</option>
+                            <option value="Surat Pengantar Permohonan Penerbitan Kartu Keluarga (KK)">Surat Pengantar
+                                Permohonan Penerbitan Kartu Keluarga (KK)</option>
+                            <option value="Surat Pengantar Permohonan Penerbitan Akta Kelahiran (AK)">Surat Pengantar
+                                Permohonan Penerbitan Akta Kelahiran (AK)</option>
+                            <option value="Surat Pengantar Permohonan Penerbitan Surat Keterangan Pindah">Surat
+                                Pengantar Permohonan Penerbitan Surat Keterangan Pindah</option>
+                            <option value="Surat Keterangan Kematian dan Penguburan">Surat Keterangan Kematian dan
+                                Penguburan</option>
+                            <option value="Surat Keterangan Tidak Mampu / Kurang Mampu">Surat Keterangan Tidak Mampu /
+                                Kurang Mampu</option>
+                            <option value="Surat Keterangan Kepemilikan Tanah">Surat Keterangan Kepemilikan Tanah
+                            </option>
+                            <option value="Surat Keterangan Ahli Waris">Surat Keterangan Ahli Waris</option>
+                            <option value="Surat Permohonan Proposal / Bantuan">Surat Permohonan Proposal / Bantuan
+                            </option>
+                            <option value="Surat Keterangan Ternak (Domisili / Mutasi / Kartunisasi)">Surat Keterangan
+                                Ternak (Domisili / Mutasi / Kartunisasi)</option>
+                            <option value="Surat Keterangan Hibah">Surat Keterangan Hibah</option>
+                            <option value="Surat Pengantar Dispensasi Nikah / Wali Nikah / Imunisasi / Catin">Surat
+                                Pengantar Dispensasi Nikah / Wali Nikah / Imunisasi / Catin</option>
+                            <option value="Surat Keterangan Mahar">Surat Keterangan Mahar</option>
+                            <option value="Surat Keterangan Belum Menikah / Sudah Menikah / Cerai (Janda / Duda)">Surat
+                                Keterangan Belum Menikah / Sudah Menikah / Cerai (Janda / Duda)</option>
+                            <option value="Surat Keterangan Penghasilan Orang Tua">Surat Keterangan Penghasilan Orang
+                                Tua</option>
+                            <option value="Surat Keterangan Ijin Potong Ternak">Surat Keterangan Ijin Potong Ternak
+                            </option>
+                            <option value="Surat Keterangan Usaha / NIB">Surat Keterangan Usaha / NIB</option>
+                            <option value="Surat Keterangan Jual Beli Tanah">Surat Keterangan Jual Beli Tanah</option>
+                            <option value="Surat Keterangan Lain Lain">Surat Keterangan Lain Lain</option>
                         </select>
                         <small class="text-danger jenis_surat_error"></small>
                     </div>
